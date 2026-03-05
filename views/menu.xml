@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_hospital_root"
-              name="Hospital"
-              web_icon="om_hospital,static/description/icon.png"
-              sequence="10"/>
 
-
-
-    <menuitem id="menu_hospital_operations"
-              name="Operations"
-              parent="menu_hospital_root"
-              sequence="10"/>
-
-    <menuitem id="menu_hospital_patient"
-              name="Patients"
-              parent="menu_hospital_operations"
-              action="action_hospital_patient"
-              sequence="10"/>
-
-
-
-
-    <record id="action_hospital_appointment" model="ir.actions.act_window">
+    <!-- Appointment Action (needed before menu that references it) -->
+    <record id="action_appointment" model="ir.actions.act_window">
         <field name="name">Appointments</field>
         <field name="res_model">hospital.appointment</field>
         <field name="view_mode">list,form</field>
+        <field name="context">{'default_booking_date': context_today()}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new appointment
+            </p>
+        </field>
     </record>
 
-    <menuitem id="menu_appointment"
-              name="Appointments"
-              parent="menu_hospital_operations"
-              action="action_hospital_appointment"
-              sequence="20"/>
+    <!-- Patient Action -->
+    <record id="action_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new patient
+            </p>
+        </field>
+    </record>
 
+    <!-- Root Menu: Hospital -->
+    <menuitem id="menu_hospital_root"
+        name="Hospital"
+        sequence="10"/>
 
-    <menuitem id="menu_patient_tag"
-          name="Tags"
-          parent="menu_hospital_operations"
-          action="action_patient_tag"
-          sequence="20"/>
+    <!-- Submenu: Patients -->
+    <menuitem id="menu_patients"
+        name="Patients"
+        parent="menu_hospital_root"
+        action="action_patient"
+        sequence="10"/>
+
+    <!-- Submenu: Appointments -->
+    <menuitem id="menu_appointments"
+        name="Appointments"
+        parent="menu_hospital_root"
+        action="action_appointment"
+        sequence="20"/>
+
 </odoo>

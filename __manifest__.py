@@ -1,25 +1,26 @@
+# -*- coding: utf-8 -*-
 {
-    'name': 'Hospital Management System',
-    'version': '1.0.0',
-    'category': 'Hospital',
-    'author': 'Odoo Mates',
-    'summary': 'Hospital Management System for Odoo 18',
+    'name': 'Hospital Management',
+    'version': '18.0.1.0.0',
+    'category': 'Health',
+    'summary': 'Manage patients and appointments',
     'description': """
-        This module manages Hospital Operations including Patients, 
-        Appointments, and Medical Records.
+        Hospital Management module for Odoo 18.
+        - Patient management (name, age, gender, notes, image)
+        - Appointment management with statusbar and priority
     """,
-    'license': 'LGPL-3',
-
-
-    'depends': ['base', 'mail', 'product'],
+    'author': 'Odoo Mates',
+    'website': 'https://www.odoomates.com',
+    'depends': ['mail'],
     'data': [
         'security/ir.model.access.csv',
         'views/patient_views.xml',
-        'views/patient_tag_views.xml', # New file added
         'views/appointment_views.xml',
         'views/menu.xml',
     ],
     'installable': True,
     'application': True,
     'auto_install': False,
+    'license': 'LGPL-3',
+    'sequence': -100,
 }
