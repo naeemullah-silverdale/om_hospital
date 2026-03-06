@@ -11,7 +11,9 @@
                 <field name="appointment_time"/>
                 <field name="booking_date"/>
                 <field name="priority" widget="priority"/>
-                <field name="state" widget="badge" decoration-info="state == 'in_consultation'" decoration-success="state == 'done'" decoration-danger="state == 'cancel'" decoration-muted="state == 'draft'"/>
+                <field name="state" widget="badge" decoration-info="state == 'in_consultation'"
+                       decoration-success="state == 'done'" decoration-danger="state == 'cancel'"
+                       decoration-muted="state == 'draft'"/>
             </list>
         </field>
     </record>
@@ -23,7 +25,8 @@
         <field name="arch" type="xml">
             <form string="Appointment">
                 <header>
-                    <field name="state" widget="statusbar" options="{'clickable': '1'}" statusbar_visible="draft,in_consultation,done"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"
+                           statusbar_visible="draft,in_consultation,done"/>
                 </header>
                 <sheet>
                     <h2>
@@ -34,6 +37,10 @@
                             <field name="patient_id"/>
                             <field name="appointment_time"/>
                             <field name="booking_date"/>
+                            <button name="action_test"
+                                    type="object"
+                                    string="Confirm"
+                                    class="btn-primary"/>
                         </group>
                     </group>
                 </sheet>

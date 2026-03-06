@@ -13,7 +13,7 @@
                 <filter string="Male" name="filter_male" domain="[('gender', '=', 'male')]"/>
                 <filter string="Female" name="filter_female" domain="[('gender', '=', 'female')]"/>
                 <filter string="Other" name="filter_other" domain="[('gender', '=', 'other')]"/>
-                <group expand="0" string="Group By">
+                <group>
                     <filter string="Gender" name="group_gender" context="{'group_by': 'gender'}"/>
                 </group>
             </search>

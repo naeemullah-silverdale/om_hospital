@@ -29,3 +29,12 @@ class HospitalAppointment(models.Model):
         ('done', 'Done'),
         ('cancel', 'Cancelled'),
     ], string='Status', default='draft', required=True)
+
+    def action_test(self):
+        return {
+            "effect": {
+                "fadeout": "slow",
+                "message": 'Click Successfull by naem ullah',
+                "type": "rainbow_man",
+            }
+        }
