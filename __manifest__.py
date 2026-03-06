@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Hospital Management',
-    'version': '18.0.1.0.0',
+    'name': 'Hospital Management By odoomates',
+    'version': '2603.0',
     'category': 'Health',
     'summary': 'Manage patients and appointments',
     'description': """
