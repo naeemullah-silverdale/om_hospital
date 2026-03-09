@@ -11,7 +11,7 @@
     """,
     'author': 'Odoo Mates',
     'website': 'https://www.odoomates.com',
-    'depends': ['mail'],
+    'depends': ['mail', 'base', 'product'],
     'data': [
         'security/ir.model.access.csv',
         'views/patient_views.xml',
